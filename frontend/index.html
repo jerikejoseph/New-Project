@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <h1>Employee</h1>
+            <a href="./pages/employee.html"><button id="add-btn">ADD</button></a>
+        </div>
+        <input type="text" id="search" placeholder="Search by Blood Group">
+
+        <div class="cards">
+                
+            <div id="emp-card">
+                <a href="./pages/employee.html?id=${emp._id}">
+                    <div class="card">
+                        <div class="emp-img">
+                            <img src="./images/emp_pic.jpg" alt="">
+                        </div>
+                        <div class="details">
+                            <h4>kev</h4>
+                            <p>manager</p>
+                        </div>
+
+                    </div>
+                 </a>
+                
+            </div>
+            
+               
+
+        </div>
+
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
