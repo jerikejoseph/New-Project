@@ -1,4 +1,4 @@
-import { log } from "console";
+
 
 
 document.getElementById("forms").addEventListener("submit",async(e)=>{
@@ -13,13 +13,12 @@ document.getElementById("forms").addEventListener("submit",async(e)=>{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({name,email,password,cpassword})
-    }).then((res)=>{
-        console.log(res);
-        if(res.status==200){
+    })
+        if(res.status==201){
             alert("Succes")
+            window.location.href="../index.html"
         }
         else{
             alert("failed")
         }
     })
-})
