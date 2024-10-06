@@ -1,15 +1,17 @@
 let donors
 
 const Token=localStorage.getItem("Token")
+console.log(Token);
+
 
 
 async function getData(){
     console.log("----------------");
-    let res=await fetch("http://localhost:3000/api/getdonors")
-    // console.log(res);
+    let res=await fetch("http://localhost:3000/api/getdonors",{headers:{"authorization":`Bearer${Token}`}})
+     console.log(res);
     if(res.status==200){
         donors=await res.json();
-        // console.log(donors.name);
+         console.log(donors.name);
 
         str=``
         donors.map((donor)=>{
