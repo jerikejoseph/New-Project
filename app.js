@@ -12,14 +12,13 @@ app.use(express.static("frond-end"))
 app.use('/api',router)
 
 Connection().then(()=>{
+    console.log("Database connected");
+    
     app.listen(process.env.PORT,()=>{
-        console.log(`http://localhost:${process.env.PORT}`);
-          
-          
+        console.log(`Server start at http://localhost:${process.env.PORT}`);        
       })
 }).catch((error)=>{
     console.log(error);
-    
 })
   
   

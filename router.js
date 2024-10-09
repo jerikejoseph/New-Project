@@ -3,5 +3,9 @@ import * as rh from "./request.Handler.js"
 
 
 const router=Router()
-router.route("/adduser").post(rh.addUsers)
+router.route("/addusers").post(rh.addUsers)
+
+
+
+
 export default router 

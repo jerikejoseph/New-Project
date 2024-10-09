@@ -10,10 +10,6 @@ const userSchema=new mongoose.Schema({
     pin:{type:String},
     password:{type:String},
     cpassword:{type:String}
-    
-    
-  
-
 })
 
 export default mongoose.model.users||mongoose.model("user",userSchema)
