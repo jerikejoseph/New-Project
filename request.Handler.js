@@ -60,33 +60,56 @@ export async function getUsers(req,res){
 
 // Update data
 
-//export async function updateUser(req,res) {
-//  try {
-//      // console.log(req.params);
-//      // console.log(req.body);
-//      const _id=req.params;
-//      const {name,phone,email,Address1,Address2,pin,password,cpassword}=req.body
-//      if(!(name&&phone&&email&&Address1&&Address2&&pin&&password&&cpassword)){
-//          return res.status(404).send({msg:"Fields Are Empty"})
-//      }
-//      
-//      userSchema.updateOne({_id},{$set:{name,phone,email,Address1,Address2,pin,password,cpassword}}).then(()=>{  
-//          console.log(req.body);
-//                    
-//          res.status(201).send({msg:"Successfully Updated"})
-//
-//      }).catch((error)=>{
-//          res.status(404).send(error)
-//      })
-//      
-//      
-//      
-//      
-//  } catch (error) {
-//      console.log(error);
-//      
-//
-//      
-//  }
-//  
-//}
+export async function updateUser(req,res) {
+  try {
+      // console.log(req.params);
+      // console.log(req.body);
+      const _id=req.params;
+      const {name,phone,email,Address1,Address2,pin,password,cpassword}=req.body
+      if(!(name&&phone&&email&&Address1&&Address2&&pin&&password&&cpassword)){
+          return res.status(404).send({msg:"Fields Are Empty"})
+      }
+      
+      userSchema.updateOne({_id},{$set:{name,phone,email,Address1,Address2,pin,password,cpassword}}).then(()=>{  
+          console.log(req.body);
+                    
+          res.status(201).send({msg:"Successfully Updated"})
+
+      }).catch((error)=>{
+          res.status(404).send(error)
+      })
+      
+      
+      
+      
+  } catch (error) {
+      console.log(error);
+      
+
+      
+  }
+  
+}
+
+
+// delete data
+
+export async function deleteUser(req,res) {
+  try {
+      const _id=req.params
+      console.log(_id);
+      userSchema.deleteOne({_id}).then(()=>{
+          res.status(200).send({msg:"Deleted"})
+      }).catch((error)=>{
+          console.log(error);
+          
+      })
+      
+      
+  } catch (error) {
+      console.log(error);
+      
+      
+  }
+  
+}

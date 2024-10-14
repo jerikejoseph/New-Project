@@ -8,7 +8,7 @@ const app=express()
 app.use(express.json())
 
 
-app.use(express.static("frond-end"))
+app.use(express.static("frontent"))
 app.use('/api',router)
 
 Connection().then(()=>{

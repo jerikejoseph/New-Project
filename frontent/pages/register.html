@@ -8,5 +8,35 @@
 </head>
 <body>
     
+<form action="/submit" method="post" id="forms">
+    <h2>Registration Form</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required onkeyup="validatePhone(document.getElementById('phone').value)">
+    <div id="phn"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address1">Address Line 1:</label>
+    <input type="text" id="address1" name="address1" required>
+
+    <label for="address2">Address Line 2:</label>
+    <input type="text" id="address2" name="address2">
+
+    <label for="pin">PIN:</label>
+    <input type="text" id="pin" name="pin" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+
+    <input type="submit" value="Register" class="button">
+</form>
+<script src="../js/register.js"></script>
 </body>
 </html>
